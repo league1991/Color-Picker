@@ -15,4 +15,5 @@ inline float randf(){return rand() / float(RAND_MAX);}
 #include "SOM.h"
 #include "Histogram.h"
 
+#include "QColorLabel.h"
 #include "colorpicker.h"

@@ -31,23 +31,20 @@ void ColorPicker::onCompute()
 		randSamples[i] = randSamples[j];
 		randSamples[j] = sample;
 	}
-	SOM som1d(SOM::SOM_1D, 64, randSamples);
-	SOM som2d(SOM::SOM_2D, 32, randSamples);
+	const int dim1D = 64;
+	const int dim2D = 64;
+	SOM som1d(SOM::SOM_1D, dim1D, randSamples);
+	SOM som2d(SOM::SOM_2D, dim2D, randSamples);
 
 	som1d.train();
 	som2d.train();
 
-	QSize size1 = ui.som1DLabel->rect().size();
-	QSize size2 = ui.som2DLabel->rect().size();
-
-	QImage image1 = som1d.getNodeAsPixels();
-	QImage image2 = som2d.getNodeAsPixels();
-	ui.som1DLabel->setPixmap(QPixmap::fromImage(image1).scaled(size1));
-	ui.som2DLabel->setPixmap(QPixmap::fromImage(image2).scaled(size2));
+	ui.som1DLabel->setResult(som1d.getNodeAsPixels(), som1d.getNodes());
+	ui.som2DLabel->setResult(som2d.getNodeAsPixels(), som2d.getNodes(), dim2D, dim2D);
 
 	ui.glWidget->setSamples(randSamples);
 	ui.glWidget->setSom1D(som1d.getNodes());
-	ui.glWidget->setSom2D(som2d.getNodes(), 32, 32);
+	ui.glWidget->setSom2D(som2d.getNodes(), dim2D, dim2D);
 }
 
 void ColorPicker::onOpen()

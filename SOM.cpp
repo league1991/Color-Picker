@@ -58,7 +58,8 @@ void SOM::trainStep( int t )
 	}
 
 	// update weight
-	float learningRestraint = m_l0 * exp(-t/m_lmbd);
+	float activeRate = exp(-t/m_lmbd);
+	float learningRestraint = m_l0 * activeRate;
 	QVector3D& bestNode = m_nodes[nearestID];
 
 	if (m_dim == SOM_1D)
@@ -69,7 +70,7 @@ void SOM::trainStep( int t )
 			int dRow = bestRow - ithRow;
 			int idDistSq = dRow*dRow;
 
-			float sigma = m_sigma0 * exp(-t / m_lmbd);
+			float sigma = m_sigma0 * activeRate;
 			float theta = exp(-idDistSq / (2.f*sigma * sigma));
 
 			QVector3D& node = m_nodes[ithRow];
@@ -81,21 +82,31 @@ void SOM::trainStep( int t )
 		int bestRow = nearestID / m_gridSize;
 		int bestCol = nearestID - bestRow * m_gridSize;
 
-			for (int ithRow = 0; ithRow < m_gridSize; ++ithRow)
+		QVector3D* pNode = &m_nodes[0];
+		float sampleX = sample.x();
+		float sampleY = sample.y();
+		float sampleZ = sample.z();
+		float sigma = m_sigma0 * activeRate;
+		for (int ithRow = 0; ithRow < m_gridSize; ++ithRow)
+		{
+			for (int ithCol = 0; ithCol < m_gridSize; ++ithCol, ++pNode)
 			{
-				for (int ithCol = 0; ithCol < m_gridSize; ++ithCol)
-				{
-					int dRow = bestRow - ithRow;
-					int dCol = bestCol - ithCol;
-					int idDistSq = (dRow*dRow+dCol*dCol);
+				int dRow = bestRow - ithRow;
+				int dCol = bestCol - ithCol;
+				int idDistSq = (dRow*dRow+dCol*dCol);
 
-					float sigma = m_sigma0 * exp(-t / m_lmbd);
-					float theta = exp(-idDistSq / (2.f*sigma * sigma));
+				float theta = exp(-idDistSq / (2.f*sigma * sigma));
 
-					QVector3D& node = m_nodes[ithRow*m_gridSize +ithCol];
-					node += learningRestraint * theta * (sample - node);
-				}
+				// *pNode += learningRestraint * theta * (sample - *pNode);
+				float nodeX = pNode->x();
+				float nodeY = pNode->y();
+				float nodeZ = pNode->z();
+				float factor = learningRestraint * theta;
+				pNode->setX(nodeX + factor *(sampleX - nodeX));
+				pNode->setY(nodeY + factor *(sampleY - nodeY));
+				pNode->setZ(nodeZ + factor *(sampleZ - nodeZ));
 			}
+		}
 	}
 }
 

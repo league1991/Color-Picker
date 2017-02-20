@@ -58,7 +58,7 @@ void ColorSpaceView::paintGL()
 	glVertex3f(1.0f,1.0f,0.0f);	glVertex3f(1.0f,1.0f,1.0f);
 	glEnd();
 
-	glPointSize(2.0f);
+	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 	for (int i = 0; i < m_samples.size(); ++i)
 	{
@@ -98,7 +98,7 @@ void ColorSpaceView::paintGL()
 	glEnd();
 
 	glBegin(GL_LINES);
-	glLineWidth(1.0f);
+	glLineWidth(0.5f);
 	for (int row = 0; row < m_som2dSize[1]; ++row)
 	{
 		for (int col = 0; col < m_som2dSize[0]-1; ++col)
