@@ -6,7 +6,7 @@ inline T clamp(T x, T minVal, T maxVal)
 	return (x < minVal) ? minVal : (x > maxVal ? maxVal : x);
 }
 
-void brightImage(float brightnessOffset, const QImage& srcImg, QImage& dstImg)
+void brightImage(float brightnessOffset, float saturationOffset, const QImage& srcImg, QImage& dstImg)
 {
 	QSize size = srcImg.size();
 	dstImg = *&QImage(size.width(), size.height(), QImage::Format_ARGB32);
@@ -15,19 +15,20 @@ void brightImage(float brightnessOffset, const QImage& srcImg, QImage& dstImg)
 	for (int i = 0; i < size.width()*size.height(); ++i, pSrc++, pDst++)
 	{
 		QColor color(*pSrc);
-// 		qreal h,s,l;
-// 		color.getHslF(&h,&s,&l);
-// 		l = max(0.0f, min(1.0f, l+brightnessOffset));
-// 		QColor newColor = QColor::fromHslF(h,s,l);
+		qreal h,s,l;
+		color.getHslF(&h,&s,&l);
+		//l = clamp(l+brightnessOffset,0.0,1.0);
+		s = clamp(s+saturationOffset,0.0,1.0);
+		color = QColor::fromHslF(h,s,l);
 
 		qreal r0,g0,b0;
 		color.getRgbF(&r0,&g0,&b0);
 		r0 = clamp(r0+brightnessOffset,0.0,1.0);
 		g0 = clamp(g0+brightnessOffset,0.0,1.0);
 		b0 = clamp(b0+brightnessOffset,0.0,1.0);
-		QColor newColor = QColor::fromRgbF(r0,g0,b0);
+		color = QColor::fromRgbF(r0,g0,b0);
 		int r,g,b;
-		newColor.getRgb(&r,&g,&b);
+		color.getRgb(&r,&g,&b);
 		*pDst = qRgb(r,g,b);
 	}
 }
@@ -67,6 +68,7 @@ QColorLabel1D::QColorLabel1D( QWidget *parent /*= 0*/ ) :QLabel(parent)
 {
 	m_ithColor = 0;
 	m_brightness = 0.0;
+	m_saturation = 0.0;
 	connect(this, SIGNAL(updateColor()), this, SLOT(onUpdateColor()));
 }
 
@@ -77,12 +79,24 @@ void QColorLabel1D::onUpdateColor()
 		return;
 	}
 	QSize size = rect().size();
-	brightImage(m_brightness, m_image, m_dispImage);
+	brightImage(m_brightness, m_saturation, m_image, m_dispImage);
 	setPixmap(QPixmap::fromImage(m_dispImage).scaled(size));
 
 	QColor selectedColor = getSelectedColor();
 	emit selectColor(selectedColor);
 	update();
+}
+
+void QColorLabel1D::setSaturation( float value )
+{
+	m_saturation = value;
+	emit updateColor();
+}
+
+void QColorLabel2D::setSaturation( float value )
+{
+	m_saturation = value;
+	emit updateColor();
 }
 
 void QColorLabel1D::setBrightness( float value )
@@ -130,7 +144,7 @@ void QColorLabel2D::onUpdateColor()
 		return;
 	}
 	QSize size = rect().size();
-	brightImage(m_brightness, m_image, m_dispImage);
+	brightImage(m_brightness, m_saturation, m_image, m_dispImage);
 	setPixmap(QPixmap::fromImage(m_dispImage).scaled(size));
 
 	QColor selectedColor = getSelectedColor();
@@ -151,6 +165,7 @@ QColorLabel2D::QColorLabel2D( QWidget* parent /*= 0*/ ) :QLabel(parent)
 {
 	m_ithRow = m_ithCol = 0;
 	m_brightness = 0.0;
+	m_saturation = 0.0;
 	connect(this, SIGNAL(updateColor()), this, SLOT(onUpdateColor()));
 }
 

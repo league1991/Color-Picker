@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1059</width>
     <height>500</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1000</width>
+    <width>1200</width>
     <height>500</height>
    </size>
   </property>
@@ -131,7 +131,7 @@
   <widget class="QSlider" name="brightnessSlider">
    <property name="geometry">
     <rect>
-     <x>690</x>
+     <x>700</x>
      <y>10</y>
      <width>22</width>
      <height>471</height>
@@ -159,7 +159,7 @@
   <widget class="QSampleLabel" name="colorLabel">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>20</y>
      <width>100</width>
      <height>100</height>
@@ -175,7 +175,7 @@
   <widget class="QSampleLabel" name="colorSlot_1">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>150</y>
      <width>41</width>
      <height>31</height>
@@ -194,7 +194,7 @@
   <widget class="QLineEdit" name="rgbEdit">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>30</y>
      <width>91</width>
      <height>20</height>
@@ -207,7 +207,7 @@
   <widget class="QLabel" name="rgbLabel">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>890</x>
      <y>30</y>
      <width>21</width>
      <height>21</height>
@@ -220,7 +220,7 @@
   <widget class="QLabel" name="hsvLabel">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>890</x>
      <y>60</y>
      <width>21</width>
      <height>21</height>
@@ -233,7 +233,7 @@
   <widget class="QLabel" name="hslLabel">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>890</x>
      <y>90</y>
      <width>21</width>
      <height>21</height>
@@ -246,7 +246,7 @@
   <widget class="QLineEdit" name="hsvEdit">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>60</y>
      <width>91</width>
      <height>20</height>
@@ -259,7 +259,7 @@
   <widget class="QLineEdit" name="hslEdit">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>90</y>
      <width>91</width>
      <height>20</height>
@@ -272,7 +272,7 @@
   <widget class="QSampleLabel" name="colorSlot_2">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>190</y>
      <width>41</width>
      <height>31</height>
@@ -291,7 +291,7 @@
   <widget class="QSampleLabel" name="colorSlot_3">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>230</y>
      <width>41</width>
      <height>31</height>
@@ -310,7 +310,7 @@
   <widget class="QSampleLabel" name="colorSlot_4">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>270</y>
      <width>41</width>
      <height>31</height>
@@ -329,7 +329,7 @@
   <widget class="QSampleLabel" name="colorSlot_5">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>310</y>
      <width>41</width>
      <height>31</height>
@@ -348,7 +348,7 @@
   <widget class="QSampleLabel" name="colorSlot_6">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>350</y>
      <width>41</width>
      <height>31</height>
@@ -367,7 +367,7 @@
   <widget class="QSampleLabel" name="colorSlot_7">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>390</y>
      <width>41</width>
      <height>31</height>
@@ -386,7 +386,7 @@
   <widget class="QSampleLabel" name="colorSlot_8">
    <property name="geometry">
     <rect>
-     <x>730</x>
+     <x>780</x>
      <y>430</y>
      <width>41</width>
      <height>31</height>
@@ -405,7 +405,7 @@
   <widget class="QSampleLabel" name="colorSlot_9">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>150</y>
      <width>41</width>
      <height>31</height>
@@ -424,7 +424,7 @@
   <widget class="QSampleLabel" name="colorSlot_10">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>190</y>
      <width>41</width>
      <height>31</height>
@@ -443,7 +443,7 @@
   <widget class="QSampleLabel" name="colorSlot_11">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>230</y>
      <width>41</width>
      <height>31</height>
@@ -462,7 +462,7 @@
   <widget class="QSampleLabel" name="colorSlot_12">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>270</y>
      <width>41</width>
      <height>31</height>
@@ -481,7 +481,7 @@
   <widget class="QSampleLabel" name="colorSlot_13">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>310</y>
      <width>41</width>
      <height>31</height>
@@ -500,7 +500,7 @@
   <widget class="QSampleLabel" name="colorSlot_14">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>350</y>
      <width>41</width>
      <height>31</height>
@@ -519,7 +519,7 @@
   <widget class="QSampleLabel" name="colorSlot_15">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>390</y>
      <width>41</width>
      <height>31</height>
@@ -538,7 +538,7 @@
   <widget class="QSampleLabel" name="colorSlot_16">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>830</x>
      <y>430</y>
      <width>41</width>
      <height>31</height>
@@ -557,7 +557,7 @@
   <widget class="QSampleLabel" name="colorSlot_17">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>150</y>
      <width>41</width>
      <height>31</height>
@@ -576,7 +576,7 @@
   <widget class="QSampleLabel" name="colorSlot_18">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>190</y>
      <width>41</width>
      <height>31</height>
@@ -595,7 +595,7 @@
   <widget class="QSampleLabel" name="colorSlot_19">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>230</y>
      <width>41</width>
      <height>31</height>
@@ -614,7 +614,7 @@
   <widget class="QSampleLabel" name="colorSlot_20">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>270</y>
      <width>41</width>
      <height>31</height>
@@ -633,7 +633,7 @@
   <widget class="QSampleLabel" name="colorSlot_21">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>310</y>
      <width>41</width>
      <height>31</height>
@@ -652,7 +652,7 @@
   <widget class="QSampleLabel" name="colorSlot_22">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>350</y>
      <width>41</width>
      <height>31</height>
@@ -671,7 +671,7 @@
   <widget class="QSampleLabel" name="colorSlot_23">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>390</y>
      <width>41</width>
      <height>31</height>
@@ -690,7 +690,7 @@
   <widget class="QSampleLabel" name="colorSlot_24">
    <property name="geometry">
     <rect>
-     <x>830</x>
+     <x>880</x>
      <y>430</y>
      <width>41</width>
      <height>31</height>
@@ -709,7 +709,7 @@
   <widget class="QSampleLabel" name="colorSlot_25">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>150</y>
      <width>41</width>
      <height>31</height>
@@ -728,7 +728,7 @@
   <widget class="QSampleLabel" name="colorSlot_26">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>190</y>
      <width>41</width>
      <height>31</height>
@@ -747,7 +747,7 @@
   <widget class="QSampleLabel" name="colorSlot_27">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>230</y>
      <width>41</width>
      <height>31</height>
@@ -766,7 +766,7 @@
   <widget class="QSampleLabel" name="colorSlot_28">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>270</y>
      <width>41</width>
      <height>31</height>
@@ -785,7 +785,7 @@
   <widget class="QSampleLabel" name="colorSlot_29">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>310</y>
      <width>41</width>
      <height>31</height>
@@ -804,7 +804,7 @@
   <widget class="QSampleLabel" name="colorSlot_30">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>350</y>
      <width>41</width>
      <height>31</height>
@@ -823,7 +823,7 @@
   <widget class="QSampleLabel" name="colorSlot_31">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>390</y>
      <width>41</width>
      <height>31</height>
@@ -842,7 +842,7 @@
   <widget class="QSampleLabel" name="colorSlot_32">
    <property name="geometry">
     <rect>
-     <x>880</x>
+     <x>930</x>
      <y>430</y>
      <width>41</width>
      <height>31</height>
@@ -861,7 +861,7 @@
   <widget class="QSampleLabel" name="colorSlot_33">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>150</y>
      <width>41</width>
      <height>31</height>
@@ -880,7 +880,7 @@
   <widget class="QSampleLabel" name="colorSlot_34">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>190</y>
      <width>41</width>
      <height>31</height>
@@ -899,7 +899,7 @@
   <widget class="QSampleLabel" name="colorSlot_35">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>230</y>
      <width>41</width>
      <height>31</height>
@@ -918,7 +918,7 @@
   <widget class="QSampleLabel" name="colorSlot_36">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>270</y>
      <width>41</width>
      <height>31</height>
@@ -937,7 +937,7 @@
   <widget class="QSampleLabel" name="colorSlot_37">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>310</y>
      <width>41</width>
      <height>31</height>
@@ -956,7 +956,7 @@
   <widget class="QSampleLabel" name="colorSlot_38">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>350</y>
      <width>41</width>
      <height>31</height>
@@ -975,7 +975,7 @@
   <widget class="QSampleLabel" name="colorSlot_39">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>390</y>
      <width>41</width>
      <height>31</height>
@@ -994,7 +994,7 @@
   <widget class="QSampleLabel" name="colorSlot_40">
    <property name="geometry">
     <rect>
-     <x>930</x>
+     <x>980</x>
      <y>430</y>
      <width>41</width>
      <height>31</height>
@@ -1008,6 +1008,34 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QSlider" name="saturationSlider">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>10</y>
+     <width>22</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>24</number>
+   </property>
+   <property name="singleStep">
+    <number>1</number>
+   </property>
+   <property name="value">
+    <number>12</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksBothSides</enum>
+   </property>
+   <property name="tickInterval">
+    <number>3</number>
    </property>
   </widget>
  </widget>

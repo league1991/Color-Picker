@@ -28,6 +28,7 @@ public:
 	QColorLabel1D(QWidget *parent = 0);
 	void				setResult(const QImage& image, const QVector<QVector3D>& nodes);
 	void				setBrightness(float value);
+	void				setSaturation( float value );
 	void				paintEvent(QPaintEvent *event);
 	void				mousePressEvent(QMouseEvent* event);
 	void				mouseMoveEvent(QMouseEvent *event);
@@ -40,6 +41,7 @@ signals:
 	void				selectColor(QColor color);
 private:
 	float				m_brightness;
+	float				m_saturation;
 	int					m_ithColor;
 	QImage				m_image, m_dispImage;
 	QVector<QVector3D>	m_colors;
@@ -52,6 +54,7 @@ public:
 	QColorLabel2D(QWidget* parent = 0);
 	void				setResult(const QImage& image, const QVector<QVector3D>& nodes, int width, int height);
 	void				setBrightness(float value);
+	void				setSaturation(float value );
 	void				pickColor(const QPointF& pos);
 	void				mouseMoveEvent(QMouseEvent *event);
 	void				mousePressEvent(QMouseEvent* event);
@@ -64,6 +67,7 @@ signals:
 	void				selectColor(QColor color);
 private:
 	float				m_brightness;
+	float				m_saturation;
 	int					m_ithRow, m_ithCol;
 	QImage				m_image, m_dispImage;
 	QVector<QVector3D>	m_colors;

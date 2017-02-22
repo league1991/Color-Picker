@@ -18,13 +18,14 @@ public slots:
 	void onGetFromClipboard();
 	void onCompute();
 	void onChangeBrightness(int value);
+	void onChangeSaturation(int value);
 	void onSelectColor(QColor color);
 	void onGetColorValue(QSampleLabel* label);
 private:
 	Ui::ColorPickerClass	ui;
 
 	QImage					m_image;
-	QSampleLabel*			m_samples[32];
+	QSampleLabel*			m_samples[40];
 };
 
 #endif // COLORPICKER_H

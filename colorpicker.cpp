@@ -10,6 +10,7 @@ ColorPicker::ColorPicker(QWidget *parent, Qt::WFlags flags)
 	connect(ui.openButton, SIGNAL(clicked()), this, SLOT(onOpen()));
 	connect(ui.pasteButton, SIGNAL(clicked()), this, SLOT(onGetFromClipboard()));
 	connect(ui.brightnessSlider, SIGNAL(valueChanged(int)), this, SLOT(onChangeBrightness(int)));
+	connect(ui.saturationSlider, SIGNAL(valueChanged(int)), this, SLOT(onChangeSaturation(int)));
 	connect(ui.som1DLabel, SIGNAL(selectColor(QColor)), this, SLOT(onSelectColor(QColor)));
 	connect(ui.som2DLabel, SIGNAL(selectColor(QColor)), this, SLOT(onSelectColor(QColor)));
 
@@ -22,8 +23,10 @@ ColorPicker::ColorPicker(QWidget *parent, Qt::WFlags flags)
 		ui.colorSlot_21,	ui.colorSlot_22,	ui.colorSlot_23,	ui.colorSlot_24,
 		ui.colorSlot_25,	ui.colorSlot_26,	ui.colorSlot_27,	ui.colorSlot_28,
 		ui.colorSlot_29,	ui.colorSlot_30,	ui.colorSlot_31,	ui.colorSlot_32,
+		ui.colorSlot_33,	ui.colorSlot_34,	ui.colorSlot_35,	ui.colorSlot_36,
+		ui.colorSlot_37,	ui.colorSlot_38,	ui.colorSlot_39,	ui.colorSlot_40,
 	};
-	for (int i = 0; i < 32; ++i)
+	for (int i = 0; i < sizeof(m_samples)/sizeof(QSampleLabel*); ++i)
 	{
 		m_samples[i] = samples[i];
 		connect(m_samples[i], SIGNAL(selectColor(QSampleLabel*)), this, SLOT(onGetColorValue(QSampleLabel*)));
@@ -133,5 +136,17 @@ void ColorPicker::onGetColorValue( QSampleLabel* label )
 			m_samples[i]->setSelected(m_samples[i] == label);
 		}
 	}
+}
+
+void ColorPicker::onChangeSaturation( int v )
+{
+	float maxValue = ui.saturationSlider->maximum();
+	float minValue = ui.saturationSlider->minimum();
+	float value = ui.saturationSlider->value();
+	float ratio = (value - minValue) / (maxValue - minValue);
+	ratio = ratio * 2.f - 1.0f;
+	ratio *= 0.5f;
+	ui.som1DLabel->setSaturation(ratio);
+	ui.som2DLabel->setSaturation(ratio);
 }
 
