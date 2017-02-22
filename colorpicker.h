@@ -17,11 +17,14 @@ public slots:
 	void setInputImage(const QImage& img);
 	void onGetFromClipboard();
 	void onCompute();
-
+	void onChangeBrightness(int value);
+	void onSelectColor(QColor color);
+	void onGetColorValue(QSampleLabel* label);
 private:
 	Ui::ColorPickerClass	ui;
 
 	QImage					m_image;
+	QSampleLabel*			m_samples[32];
 };
 
 #endif // COLORPICKER_H
