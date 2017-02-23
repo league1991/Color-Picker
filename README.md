@@ -1,7 +1,7 @@
 # Color-Picker
 A Color Picker based on manifold learning.  
 
-The algorighm is the same as the "SOM-ColorManifolds" repository. 
+The algorighm is the same as the "[SOM-ColorManifolds](https://github.com/tody411/SOM-ColorManifolds)" repository. 
 I add two sliders to control saturation and brightness. I also add 40 boxes to cache color.
 
 Use Qt4.8 for GUI Library.
