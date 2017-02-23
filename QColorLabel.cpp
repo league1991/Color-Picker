@@ -240,11 +240,15 @@ void QSampleLabel::paintEvent( QPaintEvent *event )
 	painter.setBrush(QBrush(m_color));
 	if (m_isSelected)
 	{
-		painter.setPen(QPen(QColor(0,0,0), 8));
+		painter.setPen(QPen(QColor(127,127,127), 8));
+	}
+	else
+	{
+		painter.setPen(QPen(QColor(150,150,150), 2));
 	}
 	painter.drawRect(rect());
 
-	QLabel::paintEvent(event);
+	//QLabel::paintEvent(event);
 }
 
 void QSampleLabel::dropEvent( QDropEvent *event )
