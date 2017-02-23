@@ -21,6 +21,7 @@ public slots:
 	void onChangeSaturation(int value);
 	void onSelectColor(QColor color);
 	void onGetColorValue(QSampleLabel* label);
+	void onClearColors();
 private:
 	Ui::ColorPickerClass	ui;
 

@@ -13,6 +13,7 @@ ColorPicker::ColorPicker(QWidget *parent, Qt::WFlags flags)
 	connect(ui.saturationSlider, SIGNAL(valueChanged(int)), this, SLOT(onChangeSaturation(int)));
 	connect(ui.som1DLabel, SIGNAL(selectColor(QColor)), this, SLOT(onSelectColor(QColor)));
 	connect(ui.som2DLabel, SIGNAL(selectColor(QColor)), this, SLOT(onSelectColor(QColor)));
+	connect(ui.clearButton, SIGNAL(clicked()), this, SLOT(onClearColors()));
 
 	QSampleLabel* samples[] = {
 		ui.colorSlot_1,		ui.colorSlot_2,		ui.colorSlot_3,		ui.colorSlot_4,
@@ -148,5 +149,13 @@ void ColorPicker::onChangeSaturation( int v )
 	ratio *= 0.5f;
 	ui.som1DLabel->setSaturation(ratio);
 	ui.som2DLabel->setSaturation(ratio);
+}
+
+void ColorPicker::onClearColors()
+{
+	for (int i = 0; i < sizeof(m_samples)/sizeof(QSampleLabel*); ++i)
+	{
+		m_samples[i]->setColor(QColor(255,255,255));
+	}
 }
 
